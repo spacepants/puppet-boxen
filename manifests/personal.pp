@@ -53,7 +53,7 @@ class boxen::personal (
   # class { 'foo': }
   # class { 'bar': }
   $_includes = $merge_hierarchy ? {
-    true      => hiera_array("${name}::includes",undef),
+    true      => hiera_array("${name}::includes",[]),
     default   => $includes
   }
   ensure_resource('class', $_includes)
